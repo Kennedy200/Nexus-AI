@@ -1,0 +1,70 @@
+<div class="ingestion-view">
+    <div class="header-section">
+        <h1 class="page-title">Log Ingestion</h1>
+        <p class="subtitle">Upload manual log files or connect your servers via our REST API.</p>
+    </div>
+
+    <div class="ingestion-grid">
+        <!-- Main Interactive Upload Box -->
+        <div class="upload-card card">
+            <h3><i class="fa-solid fa-cloud-arrow-up text-primary"></i> Manual Upload</h3>
+            
+            <div class="drop-zone" id="drop-zone">
+                
+                <!-- STATE 1: Default Drag & Drop View -->
+                <div id="state-default" class="drop-state">
+                    <i class="fa-solid fa-file-arrow-up drop-icon"></i>
+                    <h4>Drag & Drop log files here</h4>
+                    <p>Supports .log, .csv, .txt (Max 50MB)</p>
+                    <button class="btn-outline" id="btn-browse">Browse Files</button>
+                </div>
+
+                <!-- STATE 2: Loading / Processing View -->
+                <div id="state-loading" class="drop-state hidden">
+                    <div class="loader large-loader"></div>
+                    <h4>Processing & Sanitizing File...</h4>
+                    <p id="uploading-filename" class="text-primary font-mono"></p>
+                </div>
+
+                <!-- STATE 3: Success File Preview Card -->
+                <div id="state-success" class="drop-state hidden">
+                    <div class="file-preview-card">
+                        <div class="file-icon-box">
+                            <i id="preview-file-icon" class="fa-solid fa-file-csv"></i>
+                        </div>
+                        <div class="file-info">
+                            <h4 id="preview-filename">filename.csv</h4>
+                            <span class="file-badge"><i class="fa-solid fa-circle-check"></i> Uploaded & Sanitized</span>
+                        </div>
+                        <button id="btn-replace-file" class="btn-replace" title="Replace file">
+                            <i class="fa-solid fa-rotate-right"></i> Replace
+                        </button>
+                    </div>
+                </div>
+
+                <input type="file" id="file-input" hidden accept=".log,.csv,.txt">
+            </div>
+        </div>
+
+        <!-- Direct API Connection Box -->
+        <div class="api-card card">
+            <h3><i class="fa-solid fa-code text-primary"></i> Direct API Connection</h3>
+            <p>Stream logs directly from your firewall or server using our Python endpoint.</p>
+            
+            <div class="api-key-box">
+                <label>Your API Key</label>
+                <div class="input-with-button">
+                    <input type="password" value="nx_live_8f92j3n8v47md001" readonly>
+                    <button><i class="fa-regular fa-copy"></i></button>
+                </div>
+            </div>
+
+            <div class="code-snippet">
+                <div class="code-header">cURL Example</div>
+                <pre><code>curl -X POST https://api.nexusai.com/v1/logs \
+-H "Authorization: Bearer nx_live_..." \
+-d @/var/log/syslog</code></pre>
+            </div>
+        </div>
+    </div>
+</div>

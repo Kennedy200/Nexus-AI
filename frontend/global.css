@@ -1,0 +1,29 @@
+:root {
+    /* Light Mode Variables */
+    --bg-color: #f8fafc;       /* Very light gray/blue background */
+    --card-bg: #ffffff;        /* Pure white for cards/header */
+    --primary: #2563eb;        /* Bright AI Blue */
+    --text-main: #0f172a;      /* Dark slate for high contrast text */
+    --text-muted: #64748b;     /* Medium slate for subtitles */
+    --border-color: #e2e8f0;   /* Light gray borders */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+/* Global utility for centering content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}

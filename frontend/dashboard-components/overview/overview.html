@@ -1,0 +1,42 @@
+<div class="overview-view">
+    <h1 class="page-title">Security Overview</h1>
+    
+    <!-- KPI Cards -->
+    <div class="kpi-grid">
+        <div class="kpi-card">
+            <p>Total Logs Ingested</p>
+            <h2 id="kpi-logs">Loading...</h2>
+        </div>
+        <div class="kpi-card">
+            <p>Anomalies Grouped</p>
+            <h2 id="kpi-anomalies" class="text-warning">--</h2>
+        </div>
+        <div class="kpi-card">
+            <p>Critical Threats</p>
+            <h2 id="kpi-critical" class="text-danger">--</h2>
+        </div>
+        <div class="kpi-card">
+            <p>Threat Level</p>
+            <h2 id="kpi-level">--</h2>
+        </div>
+    </div>
+
+    <!-- Middle Section: AI Briefing + Chart -->
+    <div class="ai-section">
+        <div class="ai-briefing card">
+            <div class="card-header">
+                <h3><i class="fa-solid fa-robot text-primary"></i> Live AI Briefing</h3>
+                <span class="badge badge-pulse">Generating</span>
+            </div>
+            <div class="ai-text-box">
+                <p><strong>Nexus AI Analysis:</strong> Between 02:00 and 04:00, 15,000 failed SSH logins occurred on <code>Web-Server-01</code> originating from a single Russian IP (192.168.x.x). At 04:15, a successful login occurred, followed by an unusual database dump command.</p>
+                <p><strong>Recommendation:</strong> Immediately block IP and rotate root SSH keys on Web-Server-01.</p>
+            </div>
+        </div>
+
+        <div class="chart-card card">
+            <h3>Activity Spike</h3>
+            <canvas id="dashboardChart"></canvas>
+        </div>
+    </div>
+</div>

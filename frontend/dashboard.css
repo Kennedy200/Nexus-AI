@@ -1,0 +1,56 @@
+/* Dashboard Light Mode Variables */
+:root {
+    --bg-main: #f1f5f9;       /* Light gray background for the app */
+    --bg-panel: #ffffff;      /* Pure white for cards and sidebar */
+    --text-dark: #0f172a;     /* Dark text for headings */
+    --text-muted: #64748b;    /* Gray text for labels */
+    --border: #e2e8f0;        /* Light borders */
+    --primary: #2563eb;       /* AI Blue */
+    --danger: #ef4444;        /* Red for critical alerts */
+    --warning: #f59e0b;       /* Yellow for medium alerts */
+    --success: #10b981;       /* Green for system online */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+body.light-mode {
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    height: 100vh;
+    overflow: hidden; /* We only want the main content area to scroll */
+}
+
+.dashboard-layout {
+    display: flex;
+    height: 100vh;
+}
+
+/* Container for the injected Sidebar */
+#sidebar-container {
+    width: 260px;
+    background-color: var(--bg-panel);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+}
+
+.main-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Container for the injected Header */
+#header-container {
+    height: 70px;
+    background-color: var(--bg-panel);
+    border-bottom: 1px solid var(--border);
+}
+
+/* The area where different pages load */
+.content-area {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+}

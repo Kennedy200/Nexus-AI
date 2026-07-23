@@ -1,0 +1,49 @@
+<div class="investigator-view">
+    <!-- Header with Context Info -->
+    <div class="investigator-header">
+        <div>
+            <h1 class="page-title">AI Investigator</h1>
+            <p class="subtitle">Query your uploaded security logs using natural language.</p>
+        </div>
+        <div class="context-pill">
+            <i class="fa-solid fa-database text-primary"></i>
+            <span>Active Log Context: <strong>Active Session Logs</strong></span>
+        </div>
+    </div>
+
+    <!-- Quick Suggested Prompts -->
+    <div class="prompts-bar">
+        <span class="prompts-title">Suggested Queries:</span>
+        <button class="chip-btn" onclick="sendSuggestedQuery('Show me all failed SSH login attempts')">
+            <i class="fa-solid fa-key"></i> Failed SSH Logins
+        </button>
+        <button class="chip-btn" onclick="sendSuggestedQuery('Were there any unusual database queries?')">
+            <i class="fa-solid fa-database"></i> Database Dumps
+        </button>
+        <button class="chip-btn" onclick="sendSuggestedQuery('List top 3 attacking IP addresses with counts')">
+            <i class="fa-solid fa-network-wired"></i> Top Attacking IPs
+        </button>
+    </div>
+
+    <!-- Chat History Window -->
+    <div class="chat-window" id="chat-window">
+        <!-- Initial AI Welcome Message -->
+        <div class="chat-message ai-message">
+            <div class="avatar ai-avatar"><i class="fa-solid fa-robot"></i></div>
+            <div class="message-content">
+                <div class="message-header">Nexus AI <span class="time-stamp">Just now</span></div>
+                <p>Hello Admin! I've indexed your uploaded log files. What would you like to investigate today?</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Input Bar -->
+    <div class="chat-input-wrapper">
+        <form id="chat-form" class="chat-input-box">
+            <input type="text" id="chat-input" placeholder="Ask a question about your logs..." autocomplete="off" required>
+            <button type="submit" class="send-btn" id="send-btn">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+        </form>
+    </div>
+</div>

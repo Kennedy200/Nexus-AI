@@ -1,0 +1,53 @@
+<div class="servers-view">
+    <!-- Header Section -->
+    <div class="servers-header">
+        <div>
+            <h1 class="page-title">Servers & Data Sources</h1>
+            <p class="subtitle">Manage infrastructure nodes streaming logs to Nexus AI.</p>
+        </div>
+        <button class="primary-btn" id="btn-add-server">
+            <i class="fa-solid fa-plus"></i> Add New Server
+        </button>
+    </div>
+
+    <!-- Servers Grid -->
+    <div class="servers-grid" id="servers-grid">
+        <!-- Injected via JS -->
+    </div>
+
+    <!-- Sleek Modal Overlay (Fixed positioning) -->
+    <div id="add-server-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title-group">
+                    <i class="fa-solid fa-server modal-icon"></i>
+                    <h3>Connect New Server Node</h3>
+                </div>
+                <button id="modal-server-close" class="modal-x-btn">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <p class="modal-desc">Run this single-line installation agent on your Linux or Windows server to automatically stream secure logs to Nexus AI.</p>
+                
+                <div class="server-type-selector">
+                    <button class="type-btn active" data-type="linux"><i class="fa-brands fa-linux"></i> Linux (Ubuntu/RHEL)</button>
+                    <button class="type-btn" data-type="windows"><i class="fa-brands fa-windows"></i> Windows Server</button>
+                </div>
+
+                <div class="modal-section">
+                    <h4>One-Line Bash Agent Installer</h4>
+                    <div class="code-snippet">
+                        <pre><code id="install-script">curl -sSL https://get.nexusai.com/agent.sh | bash -s -- --token nx_agent_8f92j3n8v47</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="modal-btn modal-btn-secondary" id="btn-modal-cancel">Cancel</button>
+                <button class="modal-btn modal-btn-primary" id="btn-copy-script">
+                    <i class="fa-regular fa-copy"></i> Copy Installation Script
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

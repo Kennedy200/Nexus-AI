@@ -1,0 +1,70 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px 0;
+    background-color: var(--bg-panel);
+}
+
+.sidebar-logo {
+    padding: 0 25px 30px;
+    font-size: 22px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: 1px;
+    color: var(--text-dark);
+}
+
+.text-primary { color: var(--primary); }
+
+.sidebar-nav, .sidebar-bottom ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.sidebar-nav li a, .sidebar-bottom ul li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 25px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s;
+    border-right: 3px solid transparent;
+}
+
+.sidebar-nav li a i, .sidebar-bottom ul li a i {
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+}
+
+/* Hover and Active States */
+.sidebar-nav li:hover a, .sidebar-bottom ul li:hover a, .sidebar-nav li.active a {
+    background-color: #eff6ff; /* Very light blue */
+    color: var(--primary);
+    border-right-color: var(--primary);
+}
+
+/* Pushes the bottom links (Servers/Settings) to the very bottom */
+.sidebar-bottom {
+    margin-top: auto; 
+    border-top: 1px solid var(--border);
+    padding-top: 10px;
+}
+
+/* Add this to the bottom of your sidebar.css */
+.logout-link {
+    color: #ef4444 !important; /* Soft red text */
+}
+
+.sidebar-bottom li:hover .logout-link {
+    background-color: #fee2e2 !important; /* Soft red background on hover */
+    color: #dc2626 !important;
+    border-right-color: #ef4444 !important;
+}

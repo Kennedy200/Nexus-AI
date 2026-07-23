@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In | Nexus AI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+
+    <div class="auth-container">
+        <!-- Left Side -->
+        <div class="auth-info">
+            <a href="index.html" class="auth-logo">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>NEXUS<span class="highlight">AI</span></span>
+            </a>
+            
+            <div class="info-content">
+                <h1>Welcome back to Nexus AI.</h1>
+                <p>Your SOC dashboard is waiting. Log in to monitor recent anomalies, view AI summaries, and secure your systems.</p>
+                <ul class="info-list">
+                    <li><i class="fa-solid fa-lock"></i> End-to-end encrypted</li>
+                    <li><i class="fa-solid fa-server"></i> API connection stable</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Right Side -->
+        <div class="auth-form-wrapper">
+            <div class="auth-box">
+                <h2>Log In</h2>
+                <p>Welcome back! Please enter your details.</p>
+
+                <!-- ID added for JS routing and Backend hookup -->
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="you@company.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Log In</button>
+                </form>
+
+                <div class="switch-page">
+                    Don't have an account? <a href="signup.html">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<div class="threats-view">
+    <!-- Header Section -->
+    <div class="threats-header">
+        <div>
+            <h1 class="page-title">Threat Alerts</h1>
+            <p class="subtitle">AI-detected security anomalies and suspicious log events.</p>
+        </div>
+        <div class="threats-summary-pills">
+            <span class="pill pill-danger">2 Critical</span>
+            <span class="pill pill-warning">1 High</span>
+            <span class="pill pill-info">1 Medium</span>
+        </div>
+    </div>
+
+    <!-- Filters & Search Bar -->
+    <div class="filter-card card">
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" id="alert-search" placeholder="Search by IP, server, or event description...">
+        </div>
+        <div class="filter-pills" id="severity-filters">
+            <button class="filter-btn active" data-filter="all">All (4)</button>
+            <button class="filter-btn" data-filter="Critical">Critical</button>
+            <button class="filter-btn" data-filter="High">High</button>
+            <button class="filter-btn" data-filter="Medium">Medium</button>
+        </div>
+    </div>
+
+    <!-- Threats Table Card -->
+    <div class="table-card card">
+        <table class="threats-table">
+            <thead>
+                <tr>
+                    <th>Severity</th>
+                    <th>Timestamp</th>
+                    <th>Source Server</th>
+                    <th>Event Category</th>
+                    <th>Source IP</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="threats-tbody">
+                <!-- Rows injected by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Sleek Threat Detail Modal -->
+    <div id="threat-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title-group">
+                    <i class="fa-solid fa-shield-cat modal-icon"></i>
+                    <h3>Threat Details</h3>
+                </div>
+                <button id="modal-close" class="modal-x-btn">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <!-- Metadata Pills -->
+                <div class="modal-meta-grid">
+                    <div class="meta-item">
+                        <span class="meta-label">Severity</span>
+                        <span id="modal-severity" class="severity-badge badge-critical">Critical</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Server</span>
+                        <strong id="modal-server" class="meta-value">--</strong>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Timestamp</span>
+                        <span id="modal-time" class="meta-value">--</span>
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h4><i class="fa-solid fa-robot text-primary"></i> AI Incident Summary</h4>
+                    <p id="modal-summary" class="modal-text">--</p>
+                </div>
+
+                <div class="modal-section">
+                    <h4><i class="fa-solid fa-code text-primary"></i> Raw Log Evidence</h4>
+                    <div class="raw-log-box">
+                        <code id="modal-raw-log">--</code>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="modal-btn modal-btn-secondary" id="modal-close-btn">Close</button>
+                <button class="modal-btn modal-btn-primary" id="modal-investigate-btn">
+                    <i class="fa-solid fa-robot"></i> Investigate with AI
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
